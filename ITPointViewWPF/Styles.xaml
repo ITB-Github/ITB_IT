@@ -1,0 +1,341 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ITPointViewWPF"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/">
+    <Style x:Key="ButtonNormalStyle" TargetType="Button">
+        <Setter Property="Padding" Value="2"></Setter>
+        <Setter Property="MinWidth" Value="50"></Setter>
+        
+    </Style>
+
+    <Style x:Key="TextBlockHeaderStyle" TargetType="TextBlock">
+        <Setter Property="FontWeight" Value="Bold"></Setter>
+        <Setter Property="FontSize" Value="16"></Setter>
+    </Style>
+
+    <Style x:Key="ImageDefaultStyle" TargetType="Grid">
+        <Setter Property="Background"  Value="#000"></Setter>
+    </Style>
+
+    <Style x:Key="AwesomeFontButtonStyle" TargetType="fa:ImageAwesome">
+        <Setter Property="Margin" Value="10,0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="fa:ImageAwesome.Foreground" Value="#888"></Setter>
+            </Trigger>
+           
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="ButtonAwesomeFontPowerpoint" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <fa:ImageAwesome Icon="FilePowerpointOutline"
+                                    Width="12"
+                                    Height="12"
+                                    Foreground="#444"></fa:ImageAwesome>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="ButtonAwesomeFontMusic" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <fa:ImageAwesome Icon="Music"
+                                    Width="12"
+                                    Height="12"
+                                    Foreground="#444"></fa:ImageAwesome>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonAwesomeFontVideo" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <fa:ImageAwesome Icon="FileVideoOutline"
+                                    Width="12"
+                                    Height="12"
+                                    Foreground="#444"></fa:ImageAwesome>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PowerpointGrid" TargetType="DataGrid">
+        
+    </Style>
+
+
+    <Style x:Key="TextBoxStyle" TargetType="TextBox">
+        <Setter Property="MinWidth" Value="75"></Setter>
+    </Style>
+
+
+    <Style x:Key="ButtonPlayAwesomeFont" TargetType="CheckBox">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid
+                        Name="btnPlayBackGrd"
+                        Width="18"
+                        Height="18"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <fa:ImageAwesome Icon="Play"
+                                    Width="14"
+                                    Height="14"
+                                    Foreground="#444"
+                                    Name="IconPlay"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"
+                                         ></fa:ImageAwesome>
+                    </Grid>
+                    
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter
+                                TargetName="IconPlay"
+                                Property="Foreground" 
+                                Value="#666"></Setter>
+                            <Setter
+                                TargetName="IconPlay"
+                                Property="Icon"
+                                Value="Pause"></Setter>
+                            
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="btnPlayBackGrd"
+                                    Property="Background"
+                                    Value="#e6e6fa">
+                                
+                            </Setter>
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+                
+               
+            </Setter.Value>
+            
+            
+        </Setter>
+        
+    </Style>
+
+
+
+    <Style x:Key="ButtonStopAwesomeFont" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid
+                        Name="btnPlayBackGrd"
+                        Width="18"
+                        Height="18"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <fa:ImageAwesome Icon="Stop"
+                                    Width="14"
+                                    Height="14"
+                                    Foreground="#444"
+                                    Name="IconStop"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"></fa:ImageAwesome>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonRewindAwesomeFont" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid
+                        Name="btnPlayBackGrd"
+                        Width="18"
+                        Height="18"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <fa:ImageAwesome Icon="Repeat"
+                                    Width="14"
+                                    Height="14"
+                                    Foreground="#444"
+                                    Name="IconReplay"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"></fa:ImageAwesome>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <Style x:Key="ButtonOpenAwesomeFont" TargetType="CheckBox">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid
+                        Name="btnPlayBackGrd"
+                        Width="18"
+                        Height="18"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <fa:ImageAwesome Icon="Folder"
+                                    Width="14"
+                                    Height="14"
+                                    Foreground="#444"
+                                    Name="IconOpen"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"></fa:ImageAwesome>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter
+                                TargetName="IconOpen"
+                                Property="Foreground" 
+                                Value="#666"></Setter>
+                            <Setter
+                                TargetName="IconOpen"
+                                Property="Icon"
+                                Value="FolderOpen"></Setter>
+
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="btnPlayBackGrd"
+                                    Property="Background"
+                                    Value="#e6e6fa">
+
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="IsChecked" Value="False"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="ButtonPreviewAwesomeFont" TargetType="CheckBox">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Cursor" Value="Hand"></Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBox">
+                    <Grid
+                        Name="btnPlayBackGrd"
+                        Width="18"
+                        Height="18"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center">
+                        <fa:ImageAwesome Icon="EyeSlash"
+                                    Width="18"
+                                    Height="18"
+                                    Foreground="#000"
+                                    Name="IconPreview"
+                                         HorizontalAlignment="Center"
+                                         VerticalAlignment="Center"></fa:ImageAwesome>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter
+                                TargetName="IconPreview"
+                                Property="Foreground" 
+                                Value="#000"></Setter>
+                            <Setter
+                                TargetName="IconPreview"
+                                Property="Icon"
+                                Value="Eye"></Setter>
+                           
+                        </Trigger>
+
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="btnPlayBackGrd"
+                                    Property="Background"
+                                    Value="#e6e6fa">
+
+                            </Setter>
+                            <Setter
+                                TargetName="IconPreview"
+                                Property="Foreground" 
+                                Value="#666"></Setter>
+
+                        </Trigger>
+
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter
+                                TargetName="IconPreview"
+                                Property="Icon" 
+                                Value="EyeSlash"></Setter>
+                        </Trigger>
+
+                        <Trigger Property="IsFocused" Value="False">
+                            <Setter Property="IsChecked" Value="False"></Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="HeaderStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="30"></Setter>
+    </Style>
+    <Style x:Key="ImagePreviewStyle" TargetType="Image">
+        <Setter Property="Width" Value="160">
+        </Setter>
+        <Setter Property="Height" Value="90"/>
+    </Style>
+
+    <Style x:Key="AcceptButton" TargetType="Button">
+        <Setter Property="MaxWidth" Value="150">
+        </Setter>
+        <Setter Property="Padding" Value="5"></Setter>
+        <Setter Property="MaxHeight" Value="50"/>
+
+    </Style>
+
+    <Style x:Key="IconButton" TargetType="Button">
+        <Setter Property="BorderThickness" Value="0"></Setter>
+        <Setter Property="Background" Value="Transparent"></Setter>
+        <Setter Property="Margin" Value="5,0"></Setter>
+    </Style>
+
+</ResourceDictionary>

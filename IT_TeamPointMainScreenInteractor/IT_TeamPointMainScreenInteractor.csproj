@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B4A5CDE4-AB2D-451D-A597-8762D00F9544}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IT_TeamPointMainScreenInteractor</RootNamespace>
+    <AssemblyName>IT_TeamPointMainScreenInteractor</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="OutputData\ConnectionOutData.cs" />
+    <Compile Include="Interface\InputBoundary.cs" />
+    <Compile Include="Interface\HardDriveGateway.cs" />
+    <Compile Include="Interface\PointDataGateway.cs" />
+    <Compile Include="Interface\OutputBoundary.cs" />
+    <Compile Include="ITControl_Interactor.cs" />
+    <Compile Include="IT_Control_InteractorMain.cs" />
+    <Compile Include="OutputData\LauncherOutData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interface\ScreenBoundary.cs" />
+    <Compile Include="OutputData\TeamOutData.cs" />
+    <Compile Include="OutputData\ScreenOutData.cs" />
+    <Compile Include="OutputData\ScreenOutInstruction.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="InputData\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITPointBufferEnitites\ITPointBufferEnitites.csproj">
+      <Project>{1ee88cb2-2763-4e95-8dd8-63d0ac1237cc}</Project>
+      <Name>ITPointBufferEnitites</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ITPointEntities\ITPointEntities.csproj">
+      <Project>{f8ad9c55-b3a0-4c80-9340-14f5b80e9231}</Project>
+      <Name>ITPointEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{d30c43e2-aeb4-4c73-a685-1034e379d036}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

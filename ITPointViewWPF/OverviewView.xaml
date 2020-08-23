@@ -1,0 +1,38 @@
+﻿<Window x:Class="ITPointViewWPF.OverviewView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ITPointViewWPF"
+        mc:Ignorable="d"
+        xmlns:media="https://github.com/JohanLarsson/Gu.Wpf.Media"
+        Title="Overview View" Height="450" Width="800"
+        WindowStyle="None"
+        Loaded="Window_Loaded"
+        WindowStartupLocation="Manual"
+        Left="{Binding Path=Left,Mode=TwoWay}"
+        Top="{Binding Path=Top, Mode=TwoWay}"
+        Visibility="{Binding Path=WindowState, Mode=TwoWay}"
+        WindowState="{Binding Path=WindowVisibility, Mode=TwoWay}"
+        xmlns:vm="clr-namespace:ITPointPresenterController;assembly=ITPointPresenterController"
+        d:DataContext="{d:DesignInstance vm:OverviewViewModel,IsDesignTimeCreatable=True}">
+        
+    <Grid>
+        <Image Source="{Binding Path=Landing}"
+               ></Image>
+        
+        
+        <media:MediaElementWrapper >
+            
+        
+            <MediaElement 
+                x:Name="video"
+                Source="{Binding Path=Uri}"
+                          LoadedBehavior="Manual"
+                          Visibility="{Binding Path=MediaVisibility}">
+                
+            </MediaElement>
+
+        </media:MediaElementWrapper> 
+    </Grid>
+</Window>
