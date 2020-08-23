@@ -9,17 +9,27 @@
         Title="Overview View" Height="450" Width="800"
         WindowStyle="None"
         Loaded="Window_Loaded"
-        WindowStartupLocation="Manual"
-        Left="{Binding Path=Left,Mode=TwoWay}"
+        Visibility="{Binding Path=WindowVisibility, Mode=TwoWay}"
+        WindowState="{Binding Path=WindowState, Mode=TwoWay}"
         Top="{Binding Path=Top, Mode=TwoWay}"
-        Visibility="{Binding Path=WindowState, Mode=TwoWay}"
-        WindowState="{Binding Path=WindowVisibility, Mode=TwoWay}"
+        Left="{Binding Path=Left, Mode=TwoWay}"
+        Closing="Window_Closing"
         xmlns:vm="clr-namespace:ITPointPresenterController;assembly=ITPointPresenterController"
         d:DataContext="{d:DesignInstance vm:OverviewViewModel,IsDesignTimeCreatable=True}">
         
     <Grid>
-        <Image Source="{Binding Path=Landing}"
-               ></Image>
+
+        <Grid.ContextMenu>
+            <ContextMenu x:Name="ctxMenu">
+                <MenuItem Header="_Close"
+                          Click="MenuItem_Click"></MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
+        
+        <Image Source="{Binding Path=Landing, Mode=OneWay}"
+               >
+            
+        </Image>
         
         
         <media:MediaElementWrapper >

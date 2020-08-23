@@ -213,7 +213,8 @@
                            Text="File Powerpoint"
                            Style="{StaticResource TextBlockHeaderStyle}"></TextBlock>
                     <DataGrid 
-                          ItemsSource="{Binding Path=PPTs}"
+                          ItemsSource="{Binding Path=PPTs, Mode=OneWay}"
+                          SelectedItem="{Binding Path=PPTvmChosen, Mode=OneWayToSource}"
                           Grid.Row="1"
                           x:Name="dgPowerpoint"
                           CanUserAddRows="False"
@@ -224,7 +225,7 @@
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Path=Id, Mode=OneTime}" 
+                            <DataGridTextColumn Binding="{Binding Path=Id, Mode=OneWay}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="No." 
                                             IsReadOnly="True"
@@ -238,7 +239,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Binding="{Binding Path=FileName, Mode=OneTime}" 
+                            <DataGridTextColumn Binding="{Binding Path=FileName, Mode=OneWay}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="File Name" 
                                             IsReadOnly="True"
@@ -251,7 +252,8 @@
                            HorizontalAlignment="Center">
                         <CheckBox Content="Open"
                             Style="{StaticResource ButtonOpenAwesomeFont}"
-                            ></CheckBox>
+                            x:Name="chkOpenPPT"
+                            Checked="chkOpenPPT_Checked"></CheckBox>
                     </WrapPanel>
                 </Grid>
                 <!--Vùng Nhạc-->
@@ -266,7 +268,7 @@
                            Text="File Nhạc"
                            Style="{StaticResource TextBlockHeaderStyle}"></TextBlock>
                     <DataGrid 
-                          ItemsSource="{Binding Path=Musics}"
+                          ItemsSource="{Binding Path=Musics, Mode=OneWay}"
                           Grid.Row="1"
                           x:Name="dgMusic"
                           AutoGenerateColumns="False"
@@ -277,7 +279,7 @@
                           ScrollViewer.VerticalScrollBarVisibility="Auto"
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Path=Id, Mode=OneTime}" 
+                            <DataGridTextColumn Binding="{Binding Path=Id, Mode=OneWay}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="No." 
                                             IsReadOnly="True"
@@ -291,7 +293,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Binding="{Binding Path=FileName, Mode=OneTime}" 
+                            <DataGridTextColumn Binding="{Binding Path=FileName, Mode=OneWay}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="File Name" 
                                             IsReadOnly="True"
@@ -328,7 +330,7 @@
                            Text="File Video"
                            Style="{StaticResource TextBlockHeaderStyle}"></TextBlock>
                     <DataGrid 
-                          ItemsSource="{Binding Path=Videos}"
+                          ItemsSource="{Binding Path=Videos, Mode=OneWay}"
                           Grid.Row="1"
                           x:Name="dgVideo"
                           AutoGenerateColumns="False"
@@ -340,7 +342,7 @@
                           ScrollViewer.HorizontalScrollBarVisibility="Auto">
 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Path=Id, Mode=OneTime}" 
+                            <DataGridTextColumn Binding="{Binding Path=Id, Mode=OneWay}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="No." 
                                             IsReadOnly="True"
@@ -354,7 +356,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTextColumn Binding="{Binding Path=FileName, Mode=OneTime}" 
+                            <DataGridTextColumn Binding="{Binding Path=FileName, Mode=OneWay}" 
                                             ClipboardContentBinding="{x:Null}" 
                                             Header="File Name" 
                                             IsReadOnly="True"

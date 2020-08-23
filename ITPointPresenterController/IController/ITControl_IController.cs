@@ -13,10 +13,10 @@ namespace ITPointPresenterController
         void SetScreenFullScreen();
         void OpenInfomationDialog();
         void GetConnected();
-        void OpenPowerpointFile(int id);
+        void OpenPowerpointFile(PowerpointViewModel pptvm);
         void GetTeam();
         void OpenOverviewWindow();
-        
+        void LoadResources();
         
     }
 }

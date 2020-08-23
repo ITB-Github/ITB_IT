@@ -12,6 +12,9 @@ namespace IT_TeamPointMainScreenInteractor
         void ReceiveConnectionState(ConnectionOutData conn);
         void ReceiveTeamOut(List<TeamOutData> teams);
         void ReceiveScreens(List<ScreenOutData> screenOuts);
+        void ReceivePowerpoints(List<PowerpointOutData> pptOuts);
+        void ReceiveMusics(List<MusicOutData> musicOuts);
+        void ReceiveVideos(List<VideoOutData> videoOuts);
         void OpenOverviewWindow();
     }
 }

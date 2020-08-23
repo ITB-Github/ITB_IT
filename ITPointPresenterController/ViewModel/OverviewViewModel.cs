@@ -81,7 +81,7 @@ namespace ITPointPresenterController
             }
         }
 
-        public int _Top;
+        private int _Top;
         public int Top
         {
             get
@@ -95,7 +95,7 @@ namespace ITPointPresenterController
             }
         }
 
-        public int _Left;
+        private int _Left;
         public int Left
         {
             get
@@ -143,7 +143,7 @@ namespace ITPointPresenterController
             WindowVisibility = Visibility.Collapsed;
             MediaVisibility = Visibility.Collapsed;
             Uri = null;
-            Landing = null;
+            Landing = Converter.ByteToImage(Utils.Converter.FromBase64ToBytes(Resource.NoImageBase64));
             //
             PlayVideoCommand = videoCmd.PlayVideoCmd;
             PauseVideoCommand = videoCmd.PauseVideoCmd;

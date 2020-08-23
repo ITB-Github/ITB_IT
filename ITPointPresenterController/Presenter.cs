@@ -34,6 +34,30 @@ namespace ITPointPresenterController
             //throw new NotImplementedException();
         }
 
+        public void ReceiveMusics(List<MusicOutData> musicOuts)
+        {
+            _itvm.Musics = new System.Collections.ObjectModel.ObservableCollection<MusicViewModel>();
+            musicOuts.ForEach(x => _itvm.Musics.Add(new MusicViewModel()
+            {
+                Id = x.Id,
+                FileName = x.FileName,
+                Path = x.Path
+            }));
+            //throw new NotImplementedException();
+        }
+
+        public void ReceivePowerpoints(List<PowerpointOutData> pptOuts)
+        {
+            //throw new NotImplementedException();
+            _itvm.PPTs = new System.Collections.ObjectModel.ObservableCollection<PowerpointViewModel>();
+            pptOuts.ForEach(x => _itvm.PPTs.Add(new PowerpointViewModel()
+            {
+                Id = x.Id,
+                FileName = x.FileName,
+                Path = x.Path
+            }));
+        }
+
         public void ReceiveScreenPreview(ScreenOutData screenOut)
         {
             //
@@ -73,6 +97,18 @@ namespace ITPointPresenterController
                     PointSet = team.Point
                     });
             }
+        }
+
+        public void ReceiveVideos(List<VideoOutData> videoOuts)
+        {
+            _itvm.Videos = new System.Collections.ObjectModel.ObservableCollection<VideoViewModel>();
+            videoOuts.ForEach(x => _itvm.Videos.Add(new VideoViewModel()
+            {
+                Id = x.Id,
+                FileName = x.FileName,
+                Path = x.Path
+            }));
+            //throw new NotImplementedException();
         }
 
         void HideAllWindow()

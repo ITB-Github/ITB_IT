@@ -14,5 +14,7 @@ namespace IT_TeamPointMainScreenInteractor
         void RequestScreens();
         void ChooseScreen(int id);
         void RequestOpenOverviewWindow();
+        void RequestResources();
+        void RequestOpenPowerpoint(PowerpointInData ppt);
     }
 }

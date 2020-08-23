@@ -64,6 +64,11 @@ namespace ITPointPresenterController
             }
         }
 
+        public void LoadResources()
+        {
+            //throw new NotImplementedException();
+            _iCtrl.LoadResources();
+        }
 
         public bool _isCOnnected;
         public bool IsConnected
@@ -107,6 +112,21 @@ namespace ITPointPresenterController
                 RaisePropertyChanged("Teams");
             }
         }
+
+
+
+        PowerpointViewModel pptvmChosen;
+        public PowerpointViewModel PPTvmChosen
+        {
+            get => pptvmChosen;
+            set
+            {
+                pptvmChosen = value;
+                RaisePropertyChanged("PowerpointChosen");
+            }
+        }
+
+
 
 
         public ITControlViewModel()
@@ -163,6 +183,14 @@ namespace ITPointPresenterController
             if (_iCtrl == null)
                 return;
             _iCtrl.OpenOverviewWindow();
+        }
+
+
+        public void OpenPowerpoint()
+        {
+            if (_iCtrl == null)
+                return;
+            _iCtrl.OpenPowerpointFile(PPTvmChosen);
         }
 
     }

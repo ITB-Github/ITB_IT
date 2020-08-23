@@ -19,7 +19,7 @@ namespace ITPointPresenterController
         {
 
             _iInput.ChooseScreen(Id);
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void GetConnected()
@@ -40,6 +40,12 @@ namespace ITPointPresenterController
             //throw new NotImplementedException();
         }
 
+        public void LoadResources()
+        {
+            _iInput.RequestResources();
+            //throw new NotImplementedException();
+        }
+
         public void OpenInfomationDialog()
         {
             throw new NotImplementedException();
@@ -52,9 +58,15 @@ namespace ITPointPresenterController
             _iInput.RequestOpenOverviewWindow();
         }
 
-        public void OpenPowerpointFile(int id)
+        public void OpenPowerpointFile(PowerpointViewModel pptvm)
         {
-            throw new NotImplementedException();
+            _iInput.RequestOpenPowerpoint(new PowerpointInData()
+            {
+                Id = pptvm.Id,
+                FileName = pptvm.FileName,
+                Path = pptvm.Path
+            });
+            //throw new NotImplementedException();
         }
 
         public void RefreshConnection()

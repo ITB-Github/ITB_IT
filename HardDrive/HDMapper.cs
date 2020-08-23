@@ -16,22 +16,26 @@ namespace HardDrive
         }
         public byte[] GetImageToDisplay()
         {
-            throw new NotImplementedException();
+            return _hdAccess.GetImageToDisplay();
+            //throw new NotImplementedException();
         }
 
         public string LoadMusicFiles()
         {
-            throw new NotImplementedException();
+            return _hdAccess.LoadMusicFiles();
+            //throw new NotImplementedException();
         }
 
         public string LoadPowerpointFiles()
         {
-            throw new NotImplementedException();
+            return _hdAccess.LoadPowerpointFiles();
+            //throw new NotImplementedException();
         }
 
         public string LoadVideoFiles()
         {
-            throw new NotImplementedException();
+            return _hdAccess.LoadVideoFiles();
+            //throw new NotImplementedException();
         }
     }
 }

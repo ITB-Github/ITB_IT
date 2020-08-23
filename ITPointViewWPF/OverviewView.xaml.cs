@@ -30,7 +30,7 @@ namespace ITPointViewWPF
             //videoCmd.StopVideoCmd = this.StopVideo;
             //videoCmd.ReplayVideoCmd = this.ReplayVideo;
 
-            this.DataContext = new OverviewViewModel();
+           this.DataContext = new OverviewViewModel();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -103,7 +103,24 @@ namespace ITPointViewWPF
             if(e.ChangedButton == MouseButton.Left)
             {
                 DragMove();
+                return;
             }
+            if (e.ChangedButton == MouseButton.Right)
+            {
+                ctxMenu.IsOpen = true;
+                return;
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            e.Cancel = true;
+            this.Visibility = Visibility.Collapsed;
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            this.Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -44,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileOpenerAPI.cs" />
+    <Compile Include="MusicOutData.cs" />
     <Compile Include="OutputData\ConnectionOutData.cs" />
     <Compile Include="Interface\InputBoundary.cs" />
     <Compile Include="Interface\HardDriveGateway.cs" />
@@ -52,11 +54,14 @@
     <Compile Include="ITControl_Interactor.cs" />
     <Compile Include="IT_Control_InteractorMain.cs" />
     <Compile Include="OutputData\LauncherOutData.cs" />
+    <Compile Include="PowerpointInData.cs" />
+    <Compile Include="PowerpointOutData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Interface\ScreenBoundary.cs" />
     <Compile Include="OutputData\TeamOutData.cs" />
     <Compile Include="OutputData\ScreenOutData.cs" />
     <Compile Include="OutputData\ScreenOutInstruction.cs" />
+    <Compile Include="VideoOutData.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="InputData\" />

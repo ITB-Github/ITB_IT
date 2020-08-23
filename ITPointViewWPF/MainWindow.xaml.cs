@@ -43,6 +43,7 @@ namespace ITPointViewWPF
             ITControlViewModel itvm = DataContext as ITControlViewModel;
             itvm.GetConntected();
             itvm.GetTeam();
+            itvm.LoadResources();
         }
 
         private void btnSetScreen_Click(object sender, RoutedEventArgs e)
@@ -60,6 +61,24 @@ namespace ITPointViewWPF
         {
             ITControlViewModel itvm = DataContext as ITControlViewModel;
             itvm.OpenOverview();
+        }
+
+        private void chkOpenPPT_Checked(object sender, RoutedEventArgs e)
+        {
+            if(chkOpenPPT.IsChecked == false)
+            {
+                return;
+            }    
+            
+            if(dgPowerpoint.SelectedItem==null)
+            {
+                MessageBox.Show("Please choose Powerpoint File To Open");
+                return;
+            }
+
+            ITControlViewModel itvm = DataContext as ITControlViewModel;
+            itvm.OpenPowerpoint();
+
         }
     }
 }

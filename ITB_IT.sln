@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utils", "Utils\Utils.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HardDrive", "HardDrive\HardDrive.csproj", "{93CDD4A0-66B0-4E97-99C1-DBA6017014EA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileOpenerAPI", "FileOpenerAPI\FileOpenerAPI.csproj", "{AE1B0328-5CC8-4EA7-96A8-09715863F5B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{93CDD4A0-66B0-4E97-99C1-DBA6017014EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{93CDD4A0-66B0-4E97-99C1-DBA6017014EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{93CDD4A0-66B0-4E97-99C1-DBA6017014EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1B0328-5CC8-4EA7-96A8-09715863F5B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1B0328-5CC8-4EA7-96A8-09715863F5B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1B0328-5CC8-4EA7-96A8-09715863F5B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1B0328-5CC8-4EA7-96A8-09715863F5B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

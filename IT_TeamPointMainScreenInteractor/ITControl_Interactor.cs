@@ -12,6 +12,7 @@ namespace IT_TeamPointMainScreenInteractor
 {
     internal class ITControl_Interactor : InputBoundary
     {
+        FileOpenerAPI _fileAPI;
         OutputBoundary _iOuput;
         HardDriveGateway _hd;
         ScreenBoundary _iScreen;
@@ -20,12 +21,14 @@ namespace IT_TeamPointMainScreenInteractor
         public ITControl_Interactor(    OutputBoundary iOutput, 
                                         PointDataGateway iPoint, 
                                         HardDriveGateway hd,
-                                        ScreenBoundary iScreen)
+                                        ScreenBoundary iScreen,
+                                        FileOpenerAPI fileAPI)
         {
             _iOuput = iOutput;
             _iPoint = iPoint;
             _hd = hd;
             _iScreen = iScreen;
+            _fileAPI = fileAPI;
 
         }
         /// <summary>
@@ -92,6 +95,54 @@ namespace IT_TeamPointMainScreenInteractor
             }
         }
 
+        List<Powerpoint> _Powerpoints;
+        public List<Powerpoint> Powerpoints
+        {
+            get
+            {
+                return _Powerpoints;
+            }
+            set
+            {
+                _Powerpoints = value;
+                sendPPTlist(producePowerpointOut(_Powerpoints));
+            }
+        }
+
+
+        List<Music> _Musics;
+        public List<Music> Musics
+        {
+            get
+            {
+                return _Musics;
+            }
+            set
+            {
+                _Musics = value;
+                //
+                sendMusicOuts(produceMusicOutList(_Musics));
+
+
+            }
+        }
+
+        List<Video> _Videos;
+        public List<Video> Videos
+        {
+            get
+            {
+                return _Videos;
+            }
+            set
+            {
+                _Videos = value;
+                sendVideoOutList(produceVideoOutList(_Videos));
+            }
+        }
+
+
+
 
 
         /// <summary>
@@ -134,7 +185,13 @@ namespace IT_TeamPointMainScreenInteractor
             //throw new NotImplementedException();
         }
 
-
+        public void RequestResources()
+        {
+            Powerpoints = producePowerpointListFromJson(_hd.LoadPowerpointFiles());
+            Musics = produceMusicListFromJson(_hd.LoadMusicFiles());
+            Videos = produceVideoListFromJson(_hd.LoadVideoFiles());
+            //throw new NotImplementedException();
+        }
 
 
         /// <summary>
@@ -219,7 +276,82 @@ namespace IT_TeamPointMainScreenInteractor
         {
             _iOuput.ReceiveScreens(screenOuts);
         }
+        //
 
-        
+        List<Powerpoint> producePowerpointListFromJson(string json)
+        {
+            return Utils.Converter.DeserializeJson<List<Powerpoint>>(json);
+        }
+
+        List<PowerpointOutData> producePowerpointOut(List<Powerpoint> list)
+        {
+            List<PowerpointOutData> listPPT = new List<PowerpointOutData>();
+            foreach(var ppt in list)
+            {
+                listPPT.Add(new PowerpointOutData() { 
+                    Id = ppt.Id,
+                    FileName = ppt.FileName,
+                    Path = ppt.Path
+                });
+            }
+            return listPPT;
+        }
+
+        void sendPPTlist(List<PowerpointOutData> list)
+        {
+            _iOuput.ReceivePowerpoints(list);
+        }
+
+
+        //
+
+        List<Music> produceMusicListFromJson(string json)
+        {
+            return Utils.Converter.DeserializeJsonToList<Music>(json);
+        }
+
+        List<MusicOutData> produceMusicOutList(List<Music> list)
+        {
+            List<MusicOutData> musicOuts = new List<MusicOutData>();
+            list.ForEach(x => musicOuts.Add(new MusicOutData()
+            {
+                Id = x.Id,
+                FileName = x.FileName,
+                Path = x.Path
+            }));
+            return musicOuts;
+        }
+        void sendMusicOuts(List<MusicOutData> list)
+        {
+            _iOuput.ReceiveMusics(list);
+        }
+        //
+
+        List<Video> produceVideoListFromJson(string json)
+        {
+            return Utils.Converter.DeserializeJsonToList<Video>(json);
+        }
+
+        List<VideoOutData> produceVideoOutList(List<Video> videos)
+        {
+            List<VideoOutData> list = new List<VideoOutData>();
+            videos.ForEach(x => list.Add(new VideoOutData()
+            {
+                Id = x.Id,
+                FileName = x.FileName,
+                Path = x.Path
+            }));
+            return list;
+        }
+        void sendVideoOutList(List<VideoOutData> list)
+        {
+            _iOuput.ReceiveVideos(list);
+        }
+
+        public void RequestOpenPowerpoint(PowerpointInData ppt)
+        {
+            _fileAPI.OpenFile(ppt.Path);
+            //throw new NotImplementedException();
+        }
     }
 }
