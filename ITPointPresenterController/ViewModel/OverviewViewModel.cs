@@ -129,7 +129,7 @@ namespace ITPointPresenterController
             Top = 0;
             Left = 0;
             WindowState = WindowState.Normal;
-            WindowVisibility = Visibility.Visible;
+            WindowVisibility = Visibility.Collapsed;
             MediaVisibility = Visibility.Collapsed;
             Uri = null;
             Landing = null;

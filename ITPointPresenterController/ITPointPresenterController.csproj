@@ -50,9 +50,11 @@
     <Compile Include="Controller.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="Designer.cs" />
+    <Compile Include="IController\EndRoundPointIController.cs" />
+    <Compile Include="ViewModel\EndRoundPointViewModel.cs" />
     <Compile Include="IController\ITControl_IController.cs" />
     <Compile Include="ITPointPresenterControllerMain.cs" />
-    <Compile Include="OverviewIController.cs" />
+    <Compile Include="IController\OverviewIController.cs" />
     <Compile Include="ViewModel\OverviewViewModel.cs" />
     <Compile Include="Presenter.cs" />
     <Compile Include="IController\PreviewIController.cs" />

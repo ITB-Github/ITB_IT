@@ -61,8 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="EndRoundView.xaml.cs">
-      <DependentUpon>EndRoundView.xaml</DependentUpon>
+    <Compile Include="EndRoundPointView.xaml.cs">
+      <DependentUpon>EndRoundPointView.xaml</DependentUpon>
     </Compile>
     <Compile Include="OverviewView.xaml.cs">
       <DependentUpon>OverviewView.xaml</DependentUpon>
@@ -75,7 +75,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EndRoundView.xaml">
+    <Page Include="EndRoundPointView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EndRoundStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

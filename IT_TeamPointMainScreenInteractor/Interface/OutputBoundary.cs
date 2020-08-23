@@ -16,5 +16,7 @@ namespace IT_TeamPointMainScreenInteractor
         void ReceiveMusics(List<MusicOutData> musicOuts);
         void ReceiveVideos(List<VideoOutData> videoOuts);
         void OpenOverviewWindow();
+        void OpenEndRoundWindow();
+        void ReceiveLauncher(LauncherOutData launcher);
     }
 }

@@ -7,7 +7,7 @@ using IT_TeamPointMainScreenInteractor;
 
 namespace ITPointPresenterController
 {
-    internal class Controller : ITControl_IController, PreviewIController, OverviewIController
+    internal class Controller : ITControl_IController, PreviewIController, OverviewIController, EndRoundPointIController
     {
         private InputBoundary _iInput;
         public void AttachInput(InputBoundary iInput)
@@ -43,6 +43,12 @@ namespace ITPointPresenterController
         public void LoadResources()
         {
             _iInput.RequestResources();
+            //throw new NotImplementedException();
+        }
+
+        public void OpenEndRoundWindow()
+        {
+            _iInput.RequestOpenEndRoundWindow();
             //throw new NotImplementedException();
         }
 

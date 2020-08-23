@@ -141,6 +141,14 @@ namespace IT_TeamPointMainScreenInteractor
             }
         }
 
+        byte[] _Launcher
+        {
+            set
+            {
+                sendLauncherOut(produceLauncherOut(value));
+            }
+        }
+
 
 
 
@@ -190,9 +198,20 @@ namespace IT_TeamPointMainScreenInteractor
             Powerpoints = producePowerpointListFromJson(_hd.LoadPowerpointFiles());
             Musics = produceMusicListFromJson(_hd.LoadMusicFiles());
             Videos = produceVideoListFromJson(_hd.LoadVideoFiles());
+            _Launcher = _hd.GetImageToDisplay();
+            //throw new NotImplementedException();
+        }
+        public void RequestOpenPowerpoint(PowerpointInData ppt)
+        {
+            _fileAPI.OpenFile(ppt.Path);
             //throw new NotImplementedException();
         }
 
+        public void RequestOpenEndRoundWindow()
+        {
+            _iOuput.OpenEndRoundWindow();
+            //throw new NotImplementedException();
+        }
 
         /// <summary>
         /// Ham Private
@@ -252,6 +271,7 @@ namespace IT_TeamPointMainScreenInteractor
             _iOuput.ReceiveTeamOut(list);
         }
         //
+
 
         List<Screen> produceScreensListFromJson(string json)
         {
@@ -347,11 +367,16 @@ namespace IT_TeamPointMainScreenInteractor
         {
             _iOuput.ReceiveVideos(list);
         }
+        //
 
-        public void RequestOpenPowerpoint(PowerpointInData ppt)
+        LauncherOutData produceLauncherOut(byte[] launcherRaw)
         {
-            _fileAPI.OpenFile(ppt.Path);
-            //throw new NotImplementedException();
+            return new LauncherOutData() { Launcher = launcherRaw };
         }
+        void sendLauncherOut(LauncherOutData launcher)
+        {
+            _iOuput.ReceiveLauncher(launcher);
+        }
+        
     }
 }

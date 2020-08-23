@@ -35,8 +35,13 @@
                                   InputGestureText="Ctrl+1" 
                                   x:Name="mnuOverview"
                                   Click="mnuOverview_Click"/>
-                        <MenuItem Header="_Current Point" InputGestureText="Ctrl+2"/>
-                        <MenuItem Header="_End Round" InputGestureText="Ctrl+3"/>
+                        <MenuItem Header="_Current Point" 
+                                  InputGestureText="Ctrl+2"
+                                  x:Name="mnuCurrent"/>
+                        <MenuItem Header="_End Round" 
+                                  InputGestureText="Ctrl+3"
+                                  x:Name="mnuEndRound"
+                                  Click="mnuEndRound_Click"/>
                         <MenuItem Header="_Final" InputGestureText="Ctrl+4"/>
                     </MenuItem>
                 </Menu>

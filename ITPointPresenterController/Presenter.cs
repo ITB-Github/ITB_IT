@@ -12,17 +12,25 @@ namespace ITPointPresenterController
         ITControlViewModel _itvm;
         PreviewViewModel _prvm;
         OverviewViewModel _ovm;
-        public Presenter(ITControlViewModel itvm, PreviewViewModel prvm, OverviewViewModel ovm)
+        EndRoundPointViewModel _evm;
+        public Presenter(ITControlViewModel itvm, PreviewViewModel prvm, OverviewViewModel ovm, EndRoundPointViewModel evm)
         {
             _itvm = itvm;
             _prvm = prvm;
             _ovm = ovm;
+            _evm = evm;
         }
 
-        
+        public void OpenEndRoundWindow()
+        {
+            HideAllWindow();
+            _evm.Visibility= System.Windows.Visibility.Visible;
+            //throw new NotImplementedException();
+        }
+
         public void OpenOverviewWindow()
         {
-            //HideAllWindow();
+            HideAllWindow();
             _ovm.WindowVisibility = System.Windows.Visibility.Visible;
             //throw new NotImplementedException();
         }
@@ -31,6 +39,13 @@ namespace ITPointPresenterController
         {
             //
             _itvm.IsConnected = conn.IsConnected;
+            //throw new NotImplementedException();
+        }
+
+        public void ReceiveLauncher(LauncherOutData launcher)
+        {
+            _ovm.Landing = Converter.ByteToImage(launcher.Launcher);
+            _evm.Landing = Converter.ByteToImage(launcher.Launcher);
             //throw new NotImplementedException();
         }
 
@@ -97,6 +112,18 @@ namespace ITPointPresenterController
                     PointSet = team.Point
                     });
             }
+            //
+            _evm.Teams = new System.Collections.ObjectModel.ObservableCollection<TeamViewModel>();
+            foreach (var team in teams)
+            {
+                _evm.Teams.Add(new TeamViewModel()
+                {
+                    Id = team.Id,
+                    TeamName = team.TeamName,
+                    Point = team.Point,
+                    PointSet = team.Point
+                });
+            }
         }
 
         public void ReceiveVideos(List<VideoOutData> videoOuts)
@@ -113,7 +140,8 @@ namespace ITPointPresenterController
 
         void HideAllWindow()
         {
-            _ovm.WindowVisibility = System.Windows.Visibility.Collapsed;
+            _evm.Visibility = _ovm.WindowVisibility = System.Windows.Visibility.Collapsed;
+            
         }
     }
 }

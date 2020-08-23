@@ -18,7 +18,7 @@ namespace HardDrive
 
         internal string LoadPowerpointFiles()
         {
-            return LoadFilesWithListExtension(pptEx);
+            return LoadFilesWithListExtension(pptEx, baseFolder + "\\Powerpoint");
         }
 
 
@@ -30,7 +30,7 @@ namespace HardDrive
         };
         internal string LoadMusicFiles()
         {
-            return LoadFilesWithListExtension(musicEx);
+            return LoadFilesWithListExtension(musicEx, baseFolder + "\\Music");
             //throw new NotImplementedException();
         }
 
@@ -42,11 +42,11 @@ namespace HardDrive
         internal string LoadVideoFiles()
         {
             //throw new NotImplementedException();
-            return LoadFilesWithListExtension(videoEx);
+            return LoadFilesWithListExtension(videoEx, baseFolder+"\\Video");
         }
 
 
-        string LoadFilesWithListExtension(string[] list)
+        string LoadFilesWithListExtension(string[] list, string baseFolder)
         {
             string filesInJson = "[";
             DirectoryInfo dirInfo = new DirectoryInfo(baseFolder);
@@ -112,7 +112,7 @@ namespace HardDrive
             return false;
         }
 
-        string imagePath = "Landing.jpg";
+        string imagePath = "Landing\\Landing.jpg";
         internal byte[] GetImageToDisplay()
         {
             //throw new NotImplementedException();

@@ -17,6 +17,6 @@ namespace ITPointPresenterController
         void GetTeam();
         void OpenOverviewWindow();
         void LoadResources();
-        
+        void OpenEndRoundWindow();
     }
 }

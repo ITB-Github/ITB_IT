@@ -35,7 +35,9 @@ namespace ITPointViewWPF
                 ITPointPresenterControllerMain(
                     viewMain.GetITControlViewModel(),
                     viewMain.GetPreviewViewModel(),
-                    viewMain.GetOverviewViewModel()
+                    viewMain.GetOverviewViewModel(),
+                    viewMain.GetRoundPointViewModel()
+
                 );
             //
             IT_Control_InteractorMain interactorMain = new

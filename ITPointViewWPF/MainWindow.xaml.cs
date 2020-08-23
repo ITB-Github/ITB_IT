@@ -80,5 +80,11 @@ namespace ITPointViewWPF
             itvm.OpenPowerpoint();
 
         }
+
+        private void mnuEndRound_Click(object sender, RoutedEventArgs e)
+        {
+            ITControlViewModel itvm = DataContext as ITControlViewModel;
+            itvm.OpenEndRound();
+        }
     }
 }

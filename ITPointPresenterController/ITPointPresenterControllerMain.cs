@@ -11,14 +11,19 @@ namespace ITPointPresenterController
     {
         Controller _iCtrl;
         Presenter _presenter;
-        public ITPointPresenterControllerMain(ITControlViewModel itvm, PreviewViewModel prvm, OverviewViewModel ovm)
+        public ITPointPresenterControllerMain(
+            ITControlViewModel itvm, 
+            PreviewViewModel prvm, 
+            OverviewViewModel ovm, 
+            EndRoundPointViewModel evm)
         {
-            _presenter = new Presenter(itvm, prvm, ovm);
+            _presenter = new Presenter(itvm, prvm, ovm, evm);
             _iCtrl = new Controller();
 
             itvm.AttachController(_iCtrl);
             prvm.AttachController(_iCtrl);
             ovm.AttachController(_iCtrl);
+            evm.AttachController(_iCtrl);
         }
 
         public OutputBoundary GetOutputBoundary()

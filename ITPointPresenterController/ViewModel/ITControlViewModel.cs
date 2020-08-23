@@ -113,7 +113,7 @@ namespace ITPointPresenterController
             }
         }
 
-
+        
 
         PowerpointViewModel pptvmChosen;
         public PowerpointViewModel PPTvmChosen
@@ -191,6 +191,14 @@ namespace ITPointPresenterController
             if (_iCtrl == null)
                 return;
             _iCtrl.OpenPowerpointFile(PPTvmChosen);
+        }
+
+        public void OpenEndRound()
+        {
+            if (_iCtrl == null)
+                return;
+            _iCtrl.OpenEndRoundWindow();
+            //throw new NotImplementedException();
         }
 
     }

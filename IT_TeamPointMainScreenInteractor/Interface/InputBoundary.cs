@@ -16,5 +16,6 @@ namespace IT_TeamPointMainScreenInteractor
         void RequestOpenOverviewWindow();
         void RequestResources();
         void RequestOpenPowerpoint(PowerpointInData ppt);
+        void RequestOpenEndRoundWindow();
     }
 }
